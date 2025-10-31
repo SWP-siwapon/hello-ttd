@@ -1,7 +1,6 @@
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-// เราจะ import คลาส Greeting เข้ามา แม้ว่ามันจะยังไม่มีก็ตาม
 import com.example.Greeting;
 
 class GreetingTest {
@@ -15,5 +14,15 @@ class GreetingTest {
 
         // 3. Assert
         assertEquals("Hello, World", result);
+    }
+
+    @Test
+    void testHelloNull() {
+        // Arrange
+        Greeting greeting = new Greeting();
+        // Act
+        String result = greeting.sayHello(null);
+        // Assert
+        assertEquals("Hello, Friend", result);
     }
 }
